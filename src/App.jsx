@@ -1,9 +1,21 @@
+import CohortsOpts from "./Components/CohortsOpts";
+import data from "./data/data.json";
 
-function App() {
+const App = () => {
+  
+
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
+    <>
+      <header className="header">
+        <h1>Student Dashboard</h1>
+      </header>
+      <main className="content">
+        <CohortsOpts />
+        <section className="profiles-display">
+          
+        </section>
+      </main>
+    </>
   );
 }
 
