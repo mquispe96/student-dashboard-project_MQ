@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import data from "../data/data.json";
 import readableDate from "../Helper Functions/readable-date";
 import customSort from "../Helper Functions/custom-sort";
+import { DataContext } from "./DataContext";
 
 const CohortsOpts = ({setFilterCohortBy}) => {
-    const cohorts = customSort(Array.from(new Set(data.map(personObj => readableDate(personObj.cohort.cohortCode)))));
+    const {allProfiles} = useContext(DataContext);
+    const keys = Object.keys(allProfiles);
+    const cohorts = customSort(Array.from(new Set(keys.map(objKey => readableDate(allProfiles[objKey].cohort.cohortCode)))));
     cohorts.unshift('All Students');
 
     const cohortsDisplay = cohorts.map((cohort, idx) => {

@@ -7,7 +7,7 @@ const MoreInfo = ({codewars, certifications, scores}) => {
     const {resume, linkedin, github, mockInterview} = certifications;
     const {assignments, projects, assessments} = scores;
     return (
-        <div className="card__more-info">
+        <div className="more-info">
             <div className="codewars">
                 <h3>Codewars:</h3>
                 <p><span>Current Total:</span> {total}</p>

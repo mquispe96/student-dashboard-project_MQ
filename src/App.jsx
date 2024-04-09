@@ -2,18 +2,19 @@ import React,{useState, useEffect} from "react";
 import CohortsOpts from "./Components/CohortsOpts";
 import data from "./data/data.json";
 import Cards from "./Components/Cards";
+import { DataContext } from "./Components/DataContext";
 
 const App = () => {
-  const [allprofiles, setAllProfiles] = useState({...data}); console.log(allprofiles)
+  const [allProfiles, setAllProfiles] = useState({...data}); 
   const [filterCohortBy, setFilterCohortBy] = useState('All Students');
   const [profileCardsDisplay, setProfileCardsDisplay] = useState('');
 
   useEffect(() => {
-    setProfileCardsDisplay(<Cards filterCohortBy = {filterCohortBy} allprofiles = {allprofiles}/>)
+    setProfileCardsDisplay(<Cards filterCohortBy = {filterCohortBy} allProfiles = {allProfiles}/>)
   }, [filterCohortBy])
 
   return (
-    <>
+    <DataContext.Provider value = {{allProfiles, setAllProfiles}}>
       <header className="header">
         <h1>Student Dashboard</h1>
       </header>
@@ -23,7 +24,7 @@ const App = () => {
           {profileCardsDisplay}
         </section>
       </main>
-    </>
+    </DataContext.Provider>
   );
 }
 

@@ -1,22 +1,22 @@
 import React from "react";
 import Card from "./Card";
 
-const Cards = ({filterCohortBy, allprofiles}) => {
+const Cards = ({filterCohortBy, allProfiles}) => {
     let profileCards = [];
-    const cohortKeys = Object.keys(allprofiles);
+    const cohortKeys = Object.keys(allProfiles);
     if(filterCohortBy === 'All Students'){
-      profileCards = cohortKeys.map((key, idx) => {
+      profileCards = cohortKeys.map((objKey, idx) => {
         return (
-          <Card key = {idx} profileObj = {allprofiles[key]}/>
+          <Card key = {idx} objKey = {objKey}/>
         )
       })
     }
     else{
       const filterBy = filterCohortBy.split(' ').join('');
-      const meetsFilter = cohortKeys.filter(key => allprofiles[key].cohort.cohortCode === filterBy);
-      profileCards = meetsFilter.map((key, idx) => {
+      const meetsFilter = cohortKeys.filter(objKey => allProfiles[objKey].cohort.cohortCode === filterBy);
+      profileCards = meetsFilter.map((objKey, idx) => {
         return (
-          <Card key = {idx} profileObj = {allprofiles[key]}/>
+          <Card key = {idx} objKey = {objKey}/>
         )
       })
     }

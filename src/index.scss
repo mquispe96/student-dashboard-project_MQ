@@ -69,7 +69,6 @@
   }
 
   .profiles-section{
-    border: 1px black solid;
     grid-column: 2/span 1;
     display: flex;
     flex-direction: column;
@@ -89,11 +88,10 @@
   .card{
     border: 3px rgb(66, 66, 234) solid;
     margin-bottom: 3%;
-    padding: 3%;
+    padding: 2%;
     display: grid;
     grid-template-columns: 1fr 4fr 2fr;
     column-gap: 2%;
-    row-gap: 5%;
     grid-template-rows: repeat(3, auto);
     &__picture{
       grid-column: 1/span 1;
@@ -119,15 +117,51 @@
         text-decoration: underline;
       }
     }
-    &__more-info{
+    &__expanded-section{
       grid-column: 1/span 3;
       grid-row: 3/span 1;
+    }
+    .more-info{
       display: grid;
       grid-template-columns: repeat(3, auto);
+      margin: 5% 0;
       .codewars, .scores, .certifications{
         p{
-          margin: 5% 0;
+          margin: 3% 0;
         }
+      }
+    }
+    .notes{
+      form{
+        margin: 3% 0;
+        padding: 2%;
+        border: 1px gray solid;
+      }
+      input{
+        margin-left: 1%;
+        margin-bottom: 1%;
+        outline: none;
+        padding: 0.1% .5%;
+      }
+      ul{
+        padding: 0 4%;
+        font-size: .75em;
+        height: 100px;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: lightgray;
+        }
+      }
+      button{
+        border: none;
+        border-radius: 5px;
+        width: 16%;
+        padding: 1%;
+        background: rgb(66, 66, 234);
+        color: white;
       }
     }
   }
