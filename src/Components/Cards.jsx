@@ -3,8 +3,8 @@ import Card from "./Card";
 import { DataContext } from "./DataContext";
 import sortBy from "../Helper Functions/sort-by";
 
-const Cards = () => {
-    const {showBy, allProfiles} = useContext(DataContext);
+const Cards = ({showBy}) => {
+    const {allProfiles} = useContext(DataContext);
     const objKeys = Object.keys(allProfiles);
     let sortedKeys = sortBy(showBy, allProfiles, objKeys);
     let profileCards = [];

@@ -1,35 +1,17 @@
-import React,{useState, useEffect} from "react";
-import data from "./data/data.json";
-import Cards from "./Components/Cards";
-import { DataContext } from "./Components/DataContext";
-import ShowBy from "./Components/ShowBy";
+import React from "react";
+import {Route, Routes} from 'react-router-dom';
+import Layout from "./Pages/Layout";
+import Home from "./Pages/Home";
+import Profile from "./Pages/Profile";
 
 const App = () => {
-  const [allProfiles, setAllProfiles] = useState({...data}); 
-  const [showBy, setShowBy] = useState({
-    byCohort: 'All Cohorts',
-    byTrack: 'all',
-    sortBy: 'default',
-    searchName: ''
-  });
-  const [profileCardsDisplay, setProfileCardsDisplay] = useState('');
-
-  useEffect(() => {
-    setProfileCardsDisplay(<Cards />)
-  }, [showBy])
-
   return (
-    <DataContext.Provider value = {{allProfiles, setAllProfiles, showBy, setShowBy}}>
-      <header className="header">
-        <h1>Student Dashboard</h1>
-      </header>
-      <main className="content">
-        <ShowBy />
-        <section className="profiles-section">
-          {profileCardsDisplay}
-        </section>
-      </main>
-    </DataContext.Provider>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+        <Route path="Profile/:profileId" element={<Profile />}/>
+      </Route>
+    </Routes>
   );
 }
 

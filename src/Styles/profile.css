@@ -1,0 +1,97 @@
+.profile-content {
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+}
+
+.back-home {
+  grid-row: 1/span 1;
+  padding: 1%;
+}
+.back-home .link {
+  color: rgb(66, 66, 234);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.back-home .link i {
+  margin-right: 5px;
+}
+
+.profile-info {
+  grid-row: 2/span 1;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+  grid-template-rows: repeat(2, auto);
+}
+.profile-info__picture {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+}
+.profile-info__picture img {
+  border-radius: 50%;
+}
+.profile-info__info {
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+}
+.profile-info__info p, .profile-info__info h3 {
+  margin: 5% 0;
+}
+
+.more-info {
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: auto 0;
+}
+.more-info .codewars p, .more-info .scores p, .more-info .certifications p {
+  margin: 3% 0;
+}
+
+.notes {
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+  margin: auto 0;
+}
+.notes form {
+  margin: 3% 0;
+  padding: 2%;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+.notes input {
+  margin-left: 1%;
+  margin-bottom: 1%;
+  outline: none;
+  padding: 0.1% 0.5%;
+}
+.notes input::placeholder {
+  font-size: 0.8em;
+}
+.notes ul {
+  padding: 0 4%;
+  font-size: 0.75em;
+  height: 150px;
+  overflow: scroll;
+}
+.notes ul::-webkit-scrollbar {
+  width: 5px;
+}
+.notes ul::-webkit-scrollbar-thumb {
+  background: rgb(66, 66, 234);
+}
+.notes ul::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.notes button {
+  border: none;
+  border-radius: 5px;
+  width: 16%;
+  padding: 1%;
+  background: rgb(66, 66, 234);
+  color: white;
+}
+
+/*# sourceMappingURL=profile.css.map */

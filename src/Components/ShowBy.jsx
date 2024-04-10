@@ -2,9 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "./DataContext";
 import CohortsOpts from "./CohortsOpts";
 
-const ShowBy = () => {
-    const {showBy, setShowBy} = useContext(DataContext)
-
+const ShowBy = ({showBy, setShowBy}) => {
     return (
         <section className="showBy-section">
             <div className="showBy-section__eaBy">

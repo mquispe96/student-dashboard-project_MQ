@@ -1,0 +1,78 @@
+.content {
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+  overflow: hidden;
+}
+
+.showBy-section {
+  grid-row: 1/span 1;
+  padding: 1%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  place-items: center;
+  row-gap: 20%;
+}
+.showBy-section__eaBy select {
+  cursor: pointer;
+}
+.showBy-section__eaBy input, .showBy-section__eaBy select {
+  outline: none;
+  padding: 2px 15px;
+  border-radius: 30px;
+}
+.showBy-section .searchName {
+  grid-column: 1/span 3;
+  margin-bottom: 1%;
+}
+
+.profiles-section {
+  grid-row: 2/span 1;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+.profiles-section__header {
+  margin: 1% 0;
+  padding: 0 3%;
+}
+.profiles-section__cards {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 0.5%;
+  padding: 0 3%;
+}
+
+.card {
+  margin-bottom: 2%;
+  padding: 4% 2%;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  place-items: center;
+  row-gap: 2%;
+  border-radius: 3%;
+}
+.card__picture {
+  grid-row: 1/span 1;
+}
+.card__picture img {
+  border-radius: 50%;
+}
+.card__info {
+  grid-row: 2/span 1;
+  text-align: center;
+}
+.card__profile-link {
+  grid-row: 3/span 1;
+}
+.card__profile-link .link {
+  color: rgb(66, 66, 234);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.card__profile-link .link i {
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=home.css.map */

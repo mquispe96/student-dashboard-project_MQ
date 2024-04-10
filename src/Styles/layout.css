@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: rgb(66, 66, 234);
+  color: white;
+}
+.header h1 {
+  margin: auto;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=layout.css.map */
