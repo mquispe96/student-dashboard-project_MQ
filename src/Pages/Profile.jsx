@@ -1,4 +1,4 @@
-import React,{useState, useEffect, useContext} from "react";
+import React,{useState, useContext} from "react";
 import "../Styles/profile.css";
 import { DataContext } from "../Components/DataContext";
 import {useParams, Link} from 'react-router-dom';
@@ -7,14 +7,17 @@ import getReadableDOB from "../Helper Functions/get-readable-dob";
 import readableDate from "../Helper Functions/readable-date";
 import MoreInfo from "../Components/MoreInfo";
 import Notes from "../Components/Notes";
+import EditForm from "../Components/EditForm";
+import { FaUserEdit } from "react-icons/fa";
 
 const Profile = () => {
     const {profileId} = useParams();
     const {allProfiles} = useContext(DataContext);
-    const {id, names, username, dob, profilePhoto, codewars, certifications, 
+    const {names, username, dob, profilePhoto, codewars, certifications, 
             notes, cohort:{cohortCode, cohortStartDate, scores}} = allProfiles[profileId];
     const {resume, linkedin, github, mockInterview} = certifications;
     const onTrack = resume && linkedin && github && mockInterview;
+    const [showEditForm, setShowEditForm] = useState(false);
 
     return (
         <main className="profile-content">
@@ -26,8 +29,7 @@ const Profile = () => {
                     <img src={profilePhoto} alt="Profile Photo" style={{border: onTrack ? '2px green solid' : '2px red solid'}}/>
                 </div>
                 <div className="profile-info__info">
-                    <h3>{formatFullname(names)}</h3>
-                    <p><span>Student ID: </span>{id}</p>
+                    <h3>{formatFullname(names)} <FaUserEdit onClick={() => setShowEditForm(true)} className="edit"/></h3>
                     <p><span>Email: </span>{username}</p>
                     <p><span>Birthday: </span>{getReadableDOB(dob)}</p>
                     <p><span>Cohort: </span>{readableDate(cohortCode)}</p>
@@ -36,6 +38,7 @@ const Profile = () => {
                 <MoreInfo codewars={codewars} certifications={certifications} scores={scores}/>
                 <Notes notes={notes} profileId={profileId}/>
             </section>
+            {showEditForm && <EditForm profileId={profileId} setShowEditForm={setShowEditForm}/>}
         </main>
     )
 }

@@ -1,7 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 html, body {
   width: 100vw;
@@ -21,3 +21,9 @@ html, body {
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 12fr;
 }
+
+// @media only screen and (min-height:430px){
+//   html, body{
+//     font-size: 1.5em;
+//   }
+// }

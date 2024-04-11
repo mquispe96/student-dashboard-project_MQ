@@ -11,6 +11,7 @@
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, auto);
     place-items: center;
+    column-gap: 2%;
     row-gap: 20%;
     &__eaBy{
         select{
@@ -19,7 +20,7 @@
         input, select{
         outline: none;
         padding: 2px 15px;
-        border-radius: 30px;
+        border-radius: 1.5em;
         }
     }
     .searchName{
@@ -52,7 +53,7 @@
     grid-template-rows: repeat(3, auto);
     place-items: center;
     row-gap: 2%;
-    border-radius: 3%;
+    border-radius: 10px;
     &__picture{
         grid-row: 1/span 1;
         img{
@@ -76,3 +77,11 @@
         }
     }
 }
+
+// @media only screen and (min-height:430px){
+//     .profiles-section{
+//         &__cards{
+//             grid-template-columns: repeat(2, auto);
+//         }
+//     }
+// }

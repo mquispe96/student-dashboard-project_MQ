@@ -6,7 +6,17 @@ import { DataContext } from "./DataContext";
 const CohortsOpts = () => {
     const {allProfiles} = useContext(DataContext);
     const objKeys = Object.keys(allProfiles);
-    const cohorts = customSort(Array.from(new Set(objKeys.map(objKey => readableDate(allProfiles[objKey].cohort.cohortCode)))));
+    const cohorts = customSort(
+                        Array.from(
+                            new Set(
+                                objKeys.map(objKey => 
+                                    readableDate(
+                                        allProfiles[objKey].cohort.cohortCode
+                                    )
+                                )
+                            )
+                        )
+                    );
     cohorts.unshift('All Cohorts');
 
     return (

@@ -1,6 +1,7 @@
 .profile-content{
+  position: relative;
   display: grid;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: .5fr 7.5fr;
 }
 
 .back-home{
@@ -23,6 +24,7 @@
   display: grid;
   grid-template-columns: 3fr 6fr;
   grid-template-rows: repeat(2, auto);
+  gap: 2%;
   &__picture{
     grid-column: 1/span 1;
     grid-row: 1/span 1;
@@ -36,6 +38,14 @@
     p, h3{
       margin: 5% 0;
     }
+    h3{
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      .edit{
+        cursor: pointer;
+        color: rgb(66, 66, 234);
+      }
+    }
   }
 }
 
@@ -44,10 +54,17 @@
   grid-row: 1/span 1;
   display: grid;
   grid-template-columns: repeat(3, auto);
+  column-gap: 2%;
   margin: auto 0;
   .codewars, .scores, .certifications{
     p{
       margin: 3% 0;
+    }
+  }
+  .certifications{
+    p{
+      display: flex;
+      align-items: center;
     }
   }
 }
@@ -72,9 +89,10 @@
     }
   }
   ul{
+    list-style: none;
     padding: 0 4%;
     font-size: .75em;
-    height: 150px;
+    height: 140px;
     overflow: scroll;
     &::-webkit-scrollbar {
       width: 5px;
@@ -85,13 +103,108 @@
     &::-webkit-scrollbar-corner {
       background: transparent; 
     }
+    li{
+      display: flex;
+      align-items: center;
+      .delete{
+        color: red;
+      }
+    }
   }
   button{
+    cursor: pointer;
     border: none;
     border-radius: 5px;
-    width: 16%;
+    padding: 1%;
+    background: rgb(66, 66, 234);
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.edit-form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: white;
+  border-radius: 1.5em;
+  width: 30%;
+  height: 65%;
+  padding: 1%;
+  p{
+    color: rgb(66, 66, 234);;
+  }
+  input{
+    border-radius: 1.5em;
+    outline: none;
+    padding: 2px 15px;
+  }
+}
+
+.certification-section{
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin-bottom: 1%;
+  label{
+    margin-right: 5%;
+  }
+  input, label{
+    cursor: pointer;
+  }
+}
+
+.scores{
+  input{
+    margin-bottom: 1%;
+  }
+}
+
+.form-btns{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  margin-top: 5%;
+  button{
+    cursor: pointer;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
     padding: 1%;
     background: rgb(66, 66, 234);
     color: white;
   }
 }
+
+// @media only screen and (min-height:430px){
+//   .profile-info{
+//     grid-template-columns: 1fr 2fr;
+//     grid-template-rows: repeat(3, auto);
+//     row-gap: 2%;
+//     align-content: start;
+//     &__picture{
+//       grid-column: 1/span 1;
+//       grid-row: 1/span 1;
+//     }
+//     &__info{
+//       grid-column: 2/span 1;
+//       grid-row: 1/span 1;
+//     }
+//   }
+  
+//   .more-info{
+//     grid-column: 1/span 2;
+//     grid-row: 2/span 1;
+//   }
+  
+//   .notes{
+//     grid-column: 1/span 2;
+//     grid-row: 3/span 1;
+//     ul{
+//       height: 400px;
+//       font-size: 1em;
+//     }
+//   }
+// }

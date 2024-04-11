@@ -1,6 +1,7 @@
 .profile-content {
+  position: relative;
   display: grid;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: 0.5fr 7.5fr;
 }
 
 .back-home {
@@ -23,6 +24,7 @@
   display: grid;
   grid-template-columns: 3fr 6fr;
   grid-template-rows: repeat(2, auto);
+  gap: 2%;
 }
 .profile-info__picture {
   grid-column: 1/span 1;
@@ -38,16 +40,29 @@
 .profile-info__info p, .profile-info__info h3 {
   margin: 5% 0;
 }
+.profile-info__info h3 {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+.profile-info__info h3 .edit {
+  cursor: pointer;
+  color: rgb(66, 66, 234);
+}
 
 .more-info {
   grid-column: 2/span 1;
   grid-row: 1/span 1;
   display: grid;
   grid-template-columns: repeat(3, auto);
+  column-gap: 2%;
   margin: auto 0;
 }
 .more-info .codewars p, .more-info .scores p, .more-info .certifications p {
   margin: 3% 0;
+}
+.more-info .certifications p {
+  display: flex;
+  align-items: center;
 }
 
 .notes {
@@ -71,9 +86,10 @@
   font-size: 0.8em;
 }
 .notes ul {
+  list-style: none;
   padding: 0 4%;
   font-size: 0.75em;
-  height: 150px;
+  height: 140px;
   overflow: scroll;
 }
 .notes ul::-webkit-scrollbar {
@@ -85,10 +101,72 @@
 .notes ul::-webkit-scrollbar-corner {
   background: transparent;
 }
+.notes ul li {
+  display: flex;
+  align-items: center;
+}
+.notes ul li .delete {
+  color: red;
+}
 .notes button {
+  cursor: pointer;
   border: none;
   border-radius: 5px;
-  width: 16%;
+  padding: 1%;
+  background: rgb(66, 66, 234);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.edit-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: white;
+  border-radius: 1.5em;
+  width: 30%;
+  height: 65%;
+  padding: 1%;
+}
+.edit-form p {
+  color: rgb(66, 66, 234);
+}
+.edit-form input {
+  border-radius: 1.5em;
+  outline: none;
+  padding: 2px 15px;
+}
+
+.certification-section {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin-bottom: 1%;
+}
+.certification-section label {
+  margin-right: 5%;
+}
+.certification-section input, .certification-section label {
+  cursor: pointer;
+}
+
+.scores input {
+  margin-bottom: 1%;
+}
+
+.form-btns {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  margin-top: 5%;
+}
+.form-btns button {
+  cursor: pointer;
+  width: 50%;
+  border: none;
+  border-radius: 5px;
   padding: 1%;
   background: rgb(66, 66, 234);
   color: white;

@@ -2,6 +2,8 @@ import React from "react";
 import getScore from "../Helper Functions/get-score";
 import formatScorePercentage from "../Helper Functions/format-score-percentage";
 import getPercentageColor from "../Helper Functions/get-percentage-color";
+import { FcApprove } from "react-icons/fc";
+import { FcDisapprove } from "react-icons/fc";
 
 const MoreInfo = ({codewars, certifications, scores}) => {
     const {current:{total, lastWeek}, goal} = codewars;
@@ -16,9 +18,9 @@ const MoreInfo = ({codewars, certifications, scores}) => {
         <div className="more-info">
             <div className="codewars">
                 <h3>Codewars</h3>
+                <p><span>Overall Total Goal:</span> {goal.total}</p>
                 <p><span>Current Total:</span> {total}</p>
                 <p><span>Last Week:</span> {lastWeek}</p>
-                <p><span>Overall Goal:</span> {goal.total}</p>
                 <p style={{color: getPercentageColor(cwGoalPercentage)}}><span>Percentage of Goal Achieved:</span> {cwGoalPercentage}</p>
             </div>
             <div className="scores">
@@ -29,10 +31,10 @@ const MoreInfo = ({codewars, certifications, scores}) => {
             </div>
             <div className="certifications">
                 <h3>Certifications</h3>
-                <p><span>Resume:</span> {resume ? '✅' : '❌'}</p>
-                <p><span>LinkedIn:</span> {linkedin ? '✅' : '❌'}</p>
-                <p><span>Mock Interview:</span> {mockInterview ? '✅' : '❌'}</p>
-                <p><span>GitHub:</span> {github ? '✅' : '❌'}</p>
+                <p><span>Resume:</span> {resume ? <FcApprove /> : <FcDisapprove />}</p>
+                <p><span>LinkedIn:</span> {linkedin ? <FcApprove /> : <FcDisapprove />}</p>
+                <p><span>Mock Interview:</span> {mockInterview ? <FcApprove /> : <FcDisapprove />}</p>
+                <p><span>GitHub:</span> {github ? <FcApprove /> : <FcDisapprove />}</p>
             </div>
         </div>
     )

@@ -11,6 +11,7 @@
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
   place-items: center;
+  column-gap: 2%;
   row-gap: 20%;
 }
 .showBy-section__eaBy select {
@@ -19,7 +20,7 @@
 .showBy-section__eaBy input, .showBy-section__eaBy select {
   outline: none;
   padding: 2px 15px;
-  border-radius: 30px;
+  border-radius: 1.5em;
 }
 .showBy-section .searchName {
   grid-column: 1/span 3;
@@ -50,7 +51,7 @@
   grid-template-rows: repeat(3, auto);
   place-items: center;
   row-gap: 2%;
-  border-radius: 3%;
+  border-radius: 10px;
 }
 .card__picture {
   grid-row: 1/span 1;

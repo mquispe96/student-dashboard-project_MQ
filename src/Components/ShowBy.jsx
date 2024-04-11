@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { DataContext } from "./DataContext";
+import React from "react";
 import CohortsOpts from "./CohortsOpts";
 
 const ShowBy = ({showBy, setShowBy}) => {
