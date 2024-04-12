@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   grid-row: 1/span 1;
   display: flex;
   justify-content: center;
@@ -9,6 +10,19 @@
 .header h1 {
   margin: auto;
   text-decoration: underline;
+}
+
+.dark-mode {
+  cursor: pointer;
+  border: 2px white solid;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  right: 3%;
+  padding: 10px;
+  display: flex;
+  place-items: center;
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=layout.css.map */

@@ -48,6 +48,17 @@
     &__header{
         margin: 1% 0;
         padding: 0 3%;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        .layout-icons{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            &__icon{
+                font-size: 1.5em;
+                margin: 0 2%;
+            }
+        }
     }
     &__cards{
         display: grid;
@@ -65,7 +76,7 @@
     place-items: center;
     row-gap: 2%;
     border-radius: 10px;
-    box-shadow: 0 0 20px 5px lightgray;
+    box-shadow: 0 0 10px 0 lightgray;
     &__picture{
         grid-row: 1/span 1;
         img{
@@ -81,6 +92,7 @@
         .link{
             color: rgb(66, 66, 234);
             text-decoration: none;
+            font-weight: bolder;
             display: flex;
             align-items: center;
             i{
@@ -93,7 +105,7 @@
 @media only screen and (max-width:430px){
     .profiles-section{
         &__cards{
-            grid-template-columns: repeat(1, auto);
+            grid-template-columns: repeat(2, auto);
         }
     }
 
@@ -107,5 +119,6 @@
 
     .card{
         margin: 3% 0;
+        font-size: .92em;
     }
 }

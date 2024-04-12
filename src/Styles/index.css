@@ -11,6 +11,7 @@ html, body {
 }
 html span, html label, body span, body label {
   color: rgb(66, 66, 234);
+  font-weight: bolder;
 }
 
 #root {

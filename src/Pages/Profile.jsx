@@ -12,7 +12,7 @@ import { FaUserEdit } from "react-icons/fa";
 
 const Profile = () => {
     const {profileId} = useParams();
-    const {allProfiles} = useContext(DataContext);
+    const {allProfiles, darkMode} = useContext(DataContext);
     const {names, username, dob, profilePhoto, codewars, certifications, 
             notes, cohort:{cohortCode, cohortStartDate, scores}} = allProfiles[profileId];
     const {resume, linkedin, github, mockInterview} = certifications;
@@ -20,7 +20,7 @@ const Profile = () => {
     const [showEditForm, setShowEditForm] = useState(false);
 
     return (
-        <main className="profile-content">
+        <main className="profile-content" style={{background: darkMode ? 'rgb(41, 41, 41)' : 'white', color: darkMode ? 'white' : 'black'}}>
             <section className="back-home">
                 <Link className="link" to="/"><i className="fa-solid fa-arrow-left-long"></i> Home</Link>
             </section>

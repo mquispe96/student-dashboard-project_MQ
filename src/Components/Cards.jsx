@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Card from "./Card";
 import { DataContext } from "./DataContext";
 import sortBy from "../Helper Functions/sort-by";
+import LayoutIcons from "./LayoutIcons";
 
 const Cards = ({showBy}) => {
   const {allProfiles} = useContext(DataContext);
   const objKeys = Object.keys(allProfiles);
   let sortedKeys = sortBy(showBy, allProfiles, objKeys);
   let profileCards = [];
+  const [layout, setLayout] = useState('grid');
+
   if(showBy.searchName !== ''){
     sortedKeys = sortedKeys.filter(objKey => {
       const fullName = `${allProfiles[objKey].names.preferredName} ${allProfiles[objKey].names.middleName} ${allProfiles[objKey].names.surname}`;
@@ -70,8 +73,11 @@ const Cards = ({showBy}) => {
   return (
     <>
       <div className="profiles-section__header">
-        <h2>{showBy.byCohort}</h2>
-        <p>Total Students: <span>{profileCards.length}</span></p>
+        <div>
+          <h2>{showBy.byCohort}</h2>
+          <p>Total Students: <span>{profileCards.length}</span></p>
+        </div>
+        <LayoutIcons setLayout = {setLayout}/>
       </div>
       <div className="profiles-section__cards">
         {profileCards}

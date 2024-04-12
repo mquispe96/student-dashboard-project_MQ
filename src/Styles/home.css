@@ -47,6 +47,17 @@
 .profiles-section__header {
   margin: 1% 0;
   padding: 0 3%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+.profiles-section__header .layout-icons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.profiles-section__header .layout-icons__icon {
+  font-size: 1.5em;
+  margin: 0 2%;
 }
 .profiles-section__cards {
   display: grid;
@@ -63,7 +74,7 @@
   place-items: center;
   row-gap: 2%;
   border-radius: 10px;
-  box-shadow: 0 0 20px 5px lightgray;
+  box-shadow: 0 0 10px 0 lightgray;
 }
 .card__picture {
   grid-row: 1/span 1;
@@ -81,6 +92,7 @@
 .card__profile-link .link {
   color: rgb(66, 66, 234);
   text-decoration: none;
+  font-weight: bolder;
   display: flex;
   align-items: center;
 }
@@ -90,7 +102,7 @@
 
 @media only screen and (max-width: 430px) {
   .profiles-section__cards {
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: repeat(2, auto);
   }
   .showBy-section {
     display: flex;
@@ -101,6 +113,7 @@
   }
   .card {
     margin: 3% 0;
+    font-size: 0.92em;
   }
 }
 
