@@ -44,8 +44,8 @@ const Notes = ({notes, profileId}) => {
     return (
         <>
             <div className="notes">
-                <h4>1 - on - 1 Notes</h4>
                 <form onSubmit={(e) => {e.preventDefault(); addNote();}}>
+                    <h3>1 - on - 1 Notes</h3>
                     <label htmlFor="commenter">Commenter Name:</label>
                     <input id="commenter" type="text" placeholder="Ex: John D." value = {noteCons.commenter} onChange = {(e) => setNoteCons({...noteCons, commenter: e.target.value})} required autoComplete="off"/><br />
                     <label htmlFor="comment">Comment:</label>

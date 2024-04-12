@@ -7,8 +7,6 @@ html, body {
   width: 100vw;
   height: 100vh;
   cursor: default;
-  font-size: 1.2em;
-  background: rgba(242, 209, 249, 0.68);
   span, label{
     color: rgb(66, 66, 234);
   }
@@ -20,10 +18,11 @@ html, body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 12fr;
+  min-width: 1300px;
 }
 
-// @media only screen and (min-height:430px){
-//   html, body{
-//     font-size: 1.5em;
-//   }
-// }
+@media only screen and (max-width:430px){
+  #root{
+    min-width: 430px;
+  }
+}

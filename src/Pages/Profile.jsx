@@ -25,15 +25,19 @@ const Profile = () => {
                 <Link className="link" to="/"><i className="fa-solid fa-arrow-left-long"></i> Home</Link>
             </section>
             <section className="profile-info">
-                <div className="profile-info__picture">
-                    <img src={profilePhoto} alt="Profile Photo" style={{border: onTrack ? '2px green solid' : '2px red solid'}}/>
-                </div>
-                <div className="profile-info__info">
-                    <h3>{formatFullname(names)} <FaUserEdit onClick={() => setShowEditForm(true)} className="edit"/></h3>
-                    <p><span>Email: </span>{username}</p>
-                    <p><span>Birthday: </span>{getReadableDOB(dob)}</p>
-                    <p><span>Cohort: </span>{readableDate(cohortCode)}</p>
-                    <p><span>Cohort Starting Date: </span>{getReadableDOB(cohortStartDate)}</p>
+                <div className="profile-info__main">
+                    <div className="info">
+                        <div>
+                            <img src={profilePhoto} alt="Profile Photo" style={{border: onTrack ? '5px green solid' : '5px red solid'}}/>
+                        </div>
+                        <div>
+                            <h3>{formatFullname(names)} <FaUserEdit onClick={() => setShowEditForm(true)} className="edit"/></h3>
+                            <p><span>Email: </span>{username}</p>
+                            <p><span>Birthday: </span>{getReadableDOB(dob)}</p>
+                            <p><span>Cohort: </span>{readableDate(cohortCode)}</p>
+                            <p><span>Cohort Started: </span>{getReadableDOB(cohortStartDate)}</p>
+                        </div>
+                    </div>
                 </div>
                 <MoreInfo codewars={codewars} certifications={certifications} scores={scores}/>
                 <Notes notes={notes} profileId={profileId}/>

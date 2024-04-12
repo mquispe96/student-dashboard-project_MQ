@@ -3,10 +3,10 @@ const getPercentageColor = percent => {
     if(90 <= number){
         return 'green';
     }
-    else if(80 <= number < 90){
-        return 'yellow';
+    else if(80 <= number && number < 90){
+        return 'rgb(255, 211, 0)';
     }
-    else if(70 <= number < 80){
+    else if(70 <= number && number < 80){
         return 'orange';
     }
     else{

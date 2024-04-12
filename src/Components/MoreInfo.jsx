@@ -18,10 +18,10 @@ const MoreInfo = ({codewars, certifications, scores}) => {
         <div className="more-info">
             <div className="codewars">
                 <h3>Codewars</h3>
-                <p><span>Overall Total Goal:</span> {goal.total}</p>
+                <p><span>Total Goal:</span> {goal.total}</p>
                 <p><span>Current Total:</span> {total}</p>
                 <p><span>Last Week:</span> {lastWeek}</p>
-                <p style={{color: getPercentageColor(cwGoalPercentage)}}><span>Percentage of Goal Achieved:</span> {cwGoalPercentage}</p>
+                <p style={{color: getPercentageColor(cwGoalPercentage)}}><span>% of Goal Achieved:</span> {cwGoalPercentage}</p>
             </div>
             <div className="scores">
                 <h3>Scores</h3>

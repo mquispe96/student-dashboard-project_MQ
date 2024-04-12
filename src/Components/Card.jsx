@@ -10,9 +10,9 @@ const Card = ({objKey}) => {
   const onTrack = resume && linkedin && github && mockInterview;
   
   return (
-      <div key={id} className="card" style={{border: onTrack ? '3px green solid' : '3px red solid'}}>
+      <div key={id} className="card">
           <div className="card__picture">
-            <img src={profilePhoto} alt="Profile Photo" style={{height: '130px'}}/>
+            <img src={profilePhoto} alt="Profile Photo" style={{border: onTrack ? '5px green solid' : '5px red solid', height: '130px'}}/>
           </div>
           <div className="card__info">
             <h3>{formatFullname(names)}</h3>

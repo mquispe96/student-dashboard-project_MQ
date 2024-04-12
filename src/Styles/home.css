@@ -1,4 +1,5 @@
 .content {
+  grid-row: 2/span 1;
   display: grid;
   grid-template-rows: 1fr 8fr;
   overflow: hidden;
@@ -33,6 +34,16 @@
   flex-direction: column;
   overflow: scroll;
 }
+.profiles-section::-webkit-scrollbar {
+  width: 5px;
+}
+.profiles-section::-webkit-scrollbar-thumb {
+  background: rgb(66, 66, 234);
+  border-radius: 1.5em;
+}
+.profiles-section::-webkit-scrollbar-corner {
+  background: transparent;
+}
 .profiles-section__header {
   margin: 1% 0;
   padding: 0 3%;
@@ -40,18 +51,19 @@
 .profiles-section__cards {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  column-gap: 0.5%;
+  column-gap: 2%;
   padding: 0 3%;
 }
 
 .card {
-  margin-bottom: 2%;
-  padding: 4% 2%;
+  margin-bottom: 9%;
+  padding: 4% 0;
   display: grid;
   grid-template-rows: repeat(3, auto);
   place-items: center;
   row-gap: 2%;
   border-radius: 10px;
+  box-shadow: 0 0 20px 5px lightgray;
 }
 .card__picture {
   grid-row: 1/span 1;
@@ -74,6 +86,22 @@
 }
 .card__profile-link .link i {
   margin-left: 5px;
+}
+
+@media only screen and (max-width: 430px) {
+  .profiles-section__cards {
+    grid-template-columns: repeat(1, auto);
+  }
+  .showBy-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .showBy-section__eaBy {
+    margin-bottom: 2%;
+  }
+  .card {
+    margin: 3% 0;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */
