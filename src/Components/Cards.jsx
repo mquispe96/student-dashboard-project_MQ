@@ -3,6 +3,8 @@ import Card from "./Card";
 import { DataContext } from "./DataContext";
 import sortBy from "../Helper Functions/sort-by";
 import LayoutIcons from "./LayoutIcons";
+import Picture from "./Picture";
+import FullName from "./FullName";
 
 const Cards = ({showBy}) => {
   const {allProfiles} = useContext(DataContext);
@@ -20,25 +22,61 @@ const Cards = ({showBy}) => {
   if(showBy.byCohort === 'All Cohorts'){
     if(showBy.byTrack === 'all'){
       profileCards = sortedKeys.map((objKey, idx) => {
-        return (
-          <Card key = {idx} objKey = {objKey}/>
-        )
+        if(layout === 'grid'){
+          return (
+            <Card key = {idx} objKey = {objKey}/>
+          )
+        }
+        else if(layout === 'picture'){
+          return (
+            <Picture key = {idx} objKey = {objKey}/>
+          )
+        }
+        else{
+          return (
+            <FullName key = {idx} objKey = {objKey}/>
+          )
+        }
       })
     }
     else if(showBy.byTrack === 'onTrack'){
       const meetsTrackFilter = sortedKeys.filter(objKey => allProfiles[objKey].certifications.resume && allProfiles[objKey].certifications.linkedin && allProfiles[objKey].certifications.github && allProfiles[objKey].certifications.mockInterview);
       profileCards = meetsTrackFilter.map((objKey, idx) => {
-        return (
-          <Card key = {idx} objKey = {objKey}/>
-        )
+        if(layout === 'grid'){
+          return (
+            <Card key = {idx} objKey = {objKey}/>
+          )
+        }
+        else if(layout === 'picture'){
+          return (
+            <Picture key = {idx} objKey = {objKey}/>
+          )
+        }
+        else{
+          return (
+            <FullName key = {idx} objKey = {objKey}/>
+          )
+        }
       })
     }
     else{
       const meetsTrackFilter = sortedKeys.filter(objKey => !allProfiles[objKey].certifications.resume || !allProfiles[objKey].certifications.linkedin || !allProfiles[objKey].certifications.github || !allProfiles[objKey].certifications.mockInterview);
       profileCards = meetsTrackFilter.map((objKey, idx) => {
-        return (
-          <Card key = {idx} objKey = {objKey}/>
-        )
+        if(layout === 'grid'){
+          return (
+            <Card key = {idx} objKey = {objKey}/>
+          )
+        }
+        else if(layout === 'picture'){
+          return (
+            <Picture key = {idx} objKey = {objKey}/>
+          )
+        }
+        else{
+          return (
+            <FullName key = {idx} objKey = {objKey}/>
+          )
+        }
       })
     }
   }
@@ -47,25 +85,61 @@ const Cards = ({showBy}) => {
     const meetsCohortFilter = sortedKeys.filter(objKey => allProfiles[objKey].cohort.cohortCode === filterCohortBy);
     if(showBy.byTrack === 'all'){
       profileCards = meetsCohortFilter.map((objKey, idx) => {
-        return (
-          <Card key = {idx} objKey = {objKey}/>
-        )
+        if(layout === 'grid'){
+          return (
+            <Card key = {idx} objKey = {objKey}/>
+          )
+        }
+        else if(layout === 'picture'){
+          return (
+            <Picture key = {idx} objKey = {objKey}/>
+          )
+        }
+        else{
+          return (
+            <FullName key = {idx} objKey = {objKey}/>
+          )
+        }
       })
     }
     else if(showBy.byTrack === 'onTrack'){
       const meetsTrackFilter = meetsCohortFilter.filter(objKey => allProfiles[objKey].certifications.resume && allProfiles[objKey].certifications.linkedin && allProfiles[objKey].certifications.github && allProfiles[objKey].certifications.mockInterview);
       profileCards = meetsTrackFilter.map((objKey, idx) => {
-        return (
-          <Card key = {idx} objKey = {objKey}/>
-        )
+        if(layout === 'grid'){
+          return (
+            <Card key = {idx} objKey = {objKey}/>
+          )
+        }
+        else if(layout === 'picture'){
+          return (
+            <Picture key = {idx} objKey = {objKey}/>
+          )
+        }
+        else{
+          return (
+            <FullName key = {idx} objKey = {objKey}/>
+          )
+        }
       })
     }
     else{
       const meetsTrackFilter = meetsCohortFilter.filter(objKey => !allProfiles[objKey].certifications.resume || !allProfiles[objKey].certifications.linkedin || !allProfiles[objKey].certifications.github || !allProfiles[objKey].certifications.mockInterview);
       profileCards = meetsTrackFilter.map((objKey, idx) => {
-        return (
-          <Card key = {idx} objKey = {objKey}/>
-        )
+        if(layout === 'grid'){
+          return (
+            <Card key = {idx} objKey = {objKey}/>
+          )
+        }
+        else if(layout === 'picture'){
+          return (
+            <Picture key = {idx} objKey = {objKey}/>
+          )
+        }
+        else{
+          return (
+            <FullName key = {idx} objKey = {objKey}/>
+          )
+        }
       })
     }
   }
@@ -79,9 +153,15 @@ const Cards = ({showBy}) => {
         </div>
         <LayoutIcons setLayout = {setLayout}/>
       </div>
-      <div className="profiles-section__cards">
+      {layout === 'grid' && <div className="profiles-section__cards">
         {profileCards}
-      </div>
+      </div>}
+      {layout === 'picture' && <div className="profiles-section__pictures">
+        {profileCards}
+      </div>}
+      {layout === 'list' && <div className="profiles-section__names">
+        {profileCards}
+      </div>}
     </>
   )
 }

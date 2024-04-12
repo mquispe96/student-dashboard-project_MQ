@@ -66,6 +66,18 @@
         column-gap: 2%;
         padding: 0 3%;
     }
+    &__pictures{
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        column-gap: 2%;
+        padding: 0 3%;
+    }
+    &__names{
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        column-gap: 2%;
+        padding: 0 3%;
+    }
 }
 
 .card{
@@ -102,9 +114,30 @@
     }
 }
 
+.picture-card{
+    margin-bottom: 9%;
+    img{
+        border-radius: 50%;
+    }
+}
+
+.name-card{
+    text-align: center;
+    margin-bottom: 9%;
+    .link{
+        text-decoration: none;
+    }
+}
+
 @media only screen and (max-width:430px){
     .profiles-section{
         &__cards{
+            grid-template-columns: repeat(2, auto);
+        }
+        &__pictures{
+            grid-template-columns: repeat(3, auto);
+        }
+        &__names{
             grid-template-columns: repeat(2, auto);
         }
     }
@@ -120,5 +153,16 @@
     .card{
         margin: 3% 0;
         font-size: .92em;
+    }
+
+    .picture-card{
+        margin: 3% 0;
+        img{
+            height: 130px;
+        }
+    }
+
+    .name-card{
+        margin: 3% 0;
     }
 }
