@@ -5,9 +5,9 @@ import { DataContext } from "./DataContext";
 
 const FullName = ({objKey}) => {
     const {allProfiles} = useContext(DataContext);
-    const {names, certifications} = allProfiles[objKey];
+    const {names, codewars: {current: {total}}, certifications} = allProfiles[objKey];
     const {resume, linkedin, github, mockInterview} = certifications;
-    const onTrack = resume && linkedin && github && mockInterview;
+    const onTrack = resume && linkedin && github && mockInterview && (total > 600);
 
     return (
         <div className="name-card">

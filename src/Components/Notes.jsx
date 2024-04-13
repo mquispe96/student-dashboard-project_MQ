@@ -3,9 +3,9 @@ import { DataContext } from "./DataContext";
 import { TiDelete } from "react-icons/ti";
 import { MdOutlineNoteAdd } from "react-icons/md";
 
-const Notes = ({notes, profileId}) => {
+const Notes = ({profileId}) => {
     const {allProfiles, setAllProfiles} = useContext(DataContext);
-    const {names:{preferredName}} = allProfiles[profileId];
+    const {names:{preferredName}, notes} = allProfiles[profileId];
     const [notesList, setNoteList] = useState([]);
     const [noteCons, setNoteCons] = useState({
         commenter: '',

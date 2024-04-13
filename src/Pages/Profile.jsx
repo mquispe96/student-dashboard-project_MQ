@@ -15,8 +15,9 @@ const Profile = () => {
     const {allProfiles, darkMode} = useContext(DataContext);
     const {names, username, dob, profilePhoto, codewars, certifications, 
             notes, cohort:{cohortCode, cohortStartDate, scores}} = allProfiles[profileId];
+    const {current: {total}} = codewars;
     const {resume, linkedin, github, mockInterview} = certifications;
-    const onTrack = resume && linkedin && github && mockInterview;
+    const onTrack = resume && linkedin && github && mockInterview && (total > 600);
     const [showEditForm, setShowEditForm] = useState(false);
 
     return (
@@ -40,7 +41,7 @@ const Profile = () => {
                     </div>
                 </div>
                 <MoreInfo codewars={codewars} certifications={certifications} scores={scores}/>
-                <Notes notes={notes} profileId={profileId}/>
+                <Notes profileId={profileId}/>
             </section>
             {showEditForm && <EditForm profileId={profileId} setShowEditForm={setShowEditForm}/>}
         </main>
