@@ -14,7 +14,7 @@ const Profile = () => {
     const {profileId} = useParams();
     const {allProfiles, darkMode} = useContext(DataContext);
     const {names, username, dob, profilePhoto, codewars, certifications, 
-            notes, cohort:{cohortCode, cohortStartDate, scores}} = allProfiles[profileId];
+            cohort:{cohortCode, cohortStartDate, scores}} = allProfiles[profileId];
     const {current: {total}} = codewars;
     const {resume, linkedin, github, mockInterview} = certifications;
     const onTrack = resume && linkedin && github && mockInterview && (total > 600);

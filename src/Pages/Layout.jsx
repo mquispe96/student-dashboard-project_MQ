@@ -15,8 +15,8 @@ const Layout = () => {
             <header className="header">
                 <h1>Student Dashboard</h1>
                 <div className="dark-mode">
-                    {darkMode && <FaRegMoon onClick={() => setDarkMode(prevState => !prevState)} className="dark-mode__icon"/>}
-                    {!darkMode && <IoSunnyOutline onClick={() => setDarkMode(prevState => !prevState)} className="dark-mode__icon"/>}
+                    {!darkMode && <FaRegMoon onClick={() => setDarkMode(prevState => !prevState)} className="dark-mode__icon"/>}
+                    {darkMode && <IoSunnyOutline onClick={() => setDarkMode(prevState => !prevState)} className="dark-mode__icon"/>}
                 </div>
             </header>
             <Outlet />

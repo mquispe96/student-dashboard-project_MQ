@@ -30,7 +30,8 @@ const ShowBy = ({showBy, setShowBy}) => {
             </div>
             <div className="showBy-section__eaBy searchName">  
                 <label htmlFor="searchName">Search Students by Name: </label>
-                <input type = 'search' placeholder='Search' id = 'searchName' value = {showBy.searchName} onChange = {(e) => setShowBy({...showBy, searchName: e.target.value})} autoComplete = 'off'/>
+                <input type = 'search' placeholder='Search' id = 'searchName' value = {showBy.searchName} 
+                    onChange = {(e) => setShowBy({...showBy, searchName: e.target.value})} autoComplete = 'off'/>
             </div>
         </section>
     )

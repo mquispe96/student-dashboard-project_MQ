@@ -34,7 +34,11 @@ const Notes = ({profileId}) => {
     }
     
     useEffect(() => {
-        setNoteList(notes.map((noteObj, idx) => (<li key={profileId + idx}><TiDelete onClick = {() => removeNote(idx)} className="delete"/> {noteObj.commenter} says, "{noteObj.comment}"</li>)))
+        setNoteList(notes.map((noteObj, idx) => 
+            (
+                <li key={profileId + idx}><TiDelete onClick = {() => removeNote(idx)} className="delete"/> {noteObj.commenter} says, "{noteObj.comment}"</li>
+            )
+        ))
         setNoteCons({
             commenter: '',
             comment: ''
@@ -47,9 +51,11 @@ const Notes = ({profileId}) => {
                 <form onSubmit={(e) => {e.preventDefault(); addNote();}}>
                     <h3>1 - on - 1 Notes</h3>
                     <label htmlFor="commenter">Commenter Name:</label>
-                    <input id="commenter" type="text" placeholder="Ex: John D." value = {noteCons.commenter} onChange = {(e) => setNoteCons({...noteCons, commenter: e.target.value})} required autoComplete="off"/><br />
+                    <input id="commenter" type="text" placeholder="Ex: John D." value = {noteCons.commenter} 
+                        onChange = {(e) => setNoteCons({...noteCons, commenter: e.target.value})} required autoComplete="off"/><br />
                     <label htmlFor="comment">Comment:</label>
-                    <input id="comment" type="text" placeholder={`Ex: ${preferredName} is...`} value = {noteCons.comment} onChange = {(e) => setNoteCons({...noteCons, comment: e.target.value})} required autoComplete="off"/><br />
+                    <input id="comment" type="text" placeholder={`Ex: ${preferredName} is...`} value = {noteCons.comment} 
+                        onChange = {(e) => setNoteCons({...noteCons, comment: e.target.value})} required autoComplete="off"/><br />
                     <button type="submit">Add Note <MdOutlineNoteAdd /></button>
                 </form>
                 <ul>
