@@ -43,7 +43,7 @@ const Profile = () => {
                 <MoreInfo codewars={codewars} certifications={certifications} scores={scores}/>
                 <Notes profileId={profileId}/>
             </section>
-            {showEditForm && <EditForm profileId={profileId} setShowEditForm={setShowEditForm}/>}
+            {showEditForm && <EditForm profileId={profileId} setShowEditForm={setShowEditForm} darkMode={darkMode}/>}
         </main>
     )
 }

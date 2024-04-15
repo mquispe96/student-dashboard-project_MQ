@@ -1,7 +1,7 @@
 import React,{useState, useContext} from "react";
 import { DataContext } from "../Components/DataContext";
 
-const EditForm = ({profileId, setShowEditForm}) => {
+const EditForm = ({profileId, setShowEditForm, darkMode}) => {
     const {allProfiles, setAllProfiles} = useContext(DataContext);
     const [profileChanges, setProfileChanges] = useState({...allProfiles[profileId]});
     const saveChanges = () => {
@@ -13,7 +13,7 @@ const EditForm = ({profileId, setShowEditForm}) => {
     }
 
     return (
-        <form className="edit-form" onSubmit={(e) => {e.preventDefault(); saveChanges();}}>
+        <form className="edit-form" onSubmit={(e) => {e.preventDefault(); saveChanges();}} style={{background: darkMode ? 'rgb(41, 41, 41)' : 'white', color: darkMode ? 'white' : 'black'}}>
             <div>
                 <fieldset>
                     <legend>Certifications</legend>
