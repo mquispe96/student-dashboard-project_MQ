@@ -17,11 +17,11 @@ const Cards = ({showBy}) => {
       return fullName.toLowerCase().includes(showBy.searchName.toLowerCase());
     })
   }
-  if(showBy.byCohort === 'All Cohorts'){
+  if(showBy.byCohort.value === 'All Cohorts'){
     profileCards = cardsDisplayLogic(showBy, sortedKeys, allProfiles, layout);
   }
   else{
-    const filterCohortBy = showBy.byCohort.split(' ').join('');
+    const filterCohortBy = showBy.byCohort.value.split(' ').join('');
     const meetsCohortFilter = sortedKeys.filter(objKey => allProfiles[objKey].cohort.cohortCode === filterCohortBy);
     profileCards = cardsDisplayLogic(showBy, meetsCohortFilter, allProfiles, layout);
   }
@@ -30,7 +30,7 @@ const Cards = ({showBy}) => {
     <>
       <div className="profiles-section__header">
         <div>
-          <h2>{showBy.byCohort}</h2>
+          <h2>{showBy.byCohort.value}</h2>
           <p>Total Students: <span>{profileCards.length}</span></p>
         </div>
         <LayoutIcons setLayout = {setLayout}/>

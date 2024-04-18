@@ -1,7 +1,7 @@
 .content{
     grid-row: 2/span 1;
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 1fr 6fr;
     overflow: hidden;
 }
 
@@ -15,18 +15,61 @@
     column-gap: 2%;
     row-gap: 20%;
     &__eaBy{
-        select{
-        cursor: pointer;
+        display: flex;
+        place-items: center;
+        input{
+            outline: none;
+            padding: 2px 15px;
+            border-radius: 1.5em;
+            border: 2px hsl(0, 0%, 80%) solid;
+            &:hover{
+                border: 2px hsl(0, 0%, 70%) solid;
+            }
         }
-        input, select{
-        outline: none;
-        padding: 2px 15px;
-        border-radius: 1.5em;
+        label{
+            margin-right: 5px;
         }
     }
     .searchName{
         grid-column: 1/span 3;
-        margin-bottom: 1%;
+    }
+}
+
+.select-container{
+    .Select__control{
+        cursor: pointer;
+        min-width: 210px;
+        min-height: 20px;
+        border-width: 2px;
+        border-radius: 1.5em;
+        box-shadow: none;
+        border-color: hsl(0, 0%, 80%);
+        &:hover{
+            border-color: hsl(0, 0%, 70%);
+        }
+    }
+    .Select__value-container{
+        padding: 2px 15px;
+    }
+    .Select__input-container{
+        padding: 0;
+        margin: 0;
+    }
+    .Select__indicator{
+        padding: 2px 5px;
+    }
+    .Select__option{
+        cursor: pointer;
+        padding: 2%;
+        &--is-focused{
+            background: rgba(66, 66, 234, 0.25);
+        }
+        &--is-selected{
+            background: rgb(66, 66, 234);
+        }
+        &:active{
+            background: rgba(66, 66, 234, 0.5);
+        }
     }
 }
 

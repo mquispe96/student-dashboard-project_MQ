@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import readableDate from "../Helper Functions/readable-date";
 import customSort from "../Helper Functions/custom-sort";
 import { DataContext } from "./DataContext";
@@ -19,15 +19,7 @@ const CohortsOpts = () => {
                     );
     cohorts.unshift('All Cohorts');
 
-    return (
-        <>
-            {cohorts.map((cohort, idx) => {
-                return (
-                    <option key = {cohort + idx} value = {cohort}>{cohort}</option>
-                )
-            })}
-        </>
-    )
+    return cohorts.map(cohort => ({value: cohort, label: cohort}))
 }
 
 export default CohortsOpts;

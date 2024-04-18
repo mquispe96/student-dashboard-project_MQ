@@ -1,32 +1,34 @@
 import React from "react";
+import Select from 'react-select';
 import CohortsOpts from "./CohortsOpts";
 
 const ShowBy = ({showBy, setShowBy}) => {
+    const trackOpts = [
+        {value: 'all', label: 'All Students'},
+        {value: 'onTrack', label: 'On Track'},
+        {value: 'offTrack', label: 'Off Track'}
+    ];
+    const sortOpts = [
+        {value: 'default', label: 'Default'},
+        {value: 'a-b', label: 'CodeWars Low - High'},
+        {value: 'b-a', label: 'CodeWars High - Low'},
+        {value: 'a-z', label: 'Name A - Z'},
+        {value: 'z-a', label: 'Name Z - A'}
+    ];
+
     return (
         <section className="showBy-section">
             <div className="showBy-section__eaBy">
                 <label htmlFor="byCohort">Filter Cohorts by: </label>
-                <select id="byCohort" value = {showBy.byCohort} onChange = {(e) => setShowBy({...showBy, byCohort: e.target.value})}>
-                    <CohortsOpts />
-                </select>
+                <Select className='select-container' classNamePrefix='Select' inputId="byCohort" value = {showBy.byCohort} onChange = {selected => setShowBy({...showBy, byCohort: selected})} options={CohortsOpts()}/>
             </div>
             <div className="showBy-section__eaBy">
                 <label htmlFor="byTrack">Filter Students Track by: </label>
-                <select id="byTrack" value = {showBy.byTrack} onChange = {(e) => setShowBy({...showBy, byTrack: e.target.value})}>
-                    <option value = 'all'>All Students</option>
-                    <option value = 'onTrack'>On Track</option>
-                    <option value = 'offTrack'>Off Track</option>
-                </select>
+                <Select className='select-container' classNamePrefix='Select' inputId="byTrack" value = {showBy.byTrack} onChange = {selected => setShowBy({...showBy, byTrack: selected})} options={trackOpts}/>
             </div>
             <div className="showBy-section__eaBy">
-                <label htmlFor="cwScore">Sort Students by: </label>
-                <select id="cwScore" value = {showBy.sortBy} onChange = {(e) => setShowBy({...showBy, sortBy: e.target.value})}>
-                    <option value = 'default'>Default</option>
-                    <option value = 'a-b'>CodeWars Lowest - Highest</option>
-                    <option value = 'b-a'>CodeWars Highest - Lowest</option>
-                    <option value = 'a-z'>Name A - Z</option>
-                    <option value = 'z-a'>Name Z - A</option>
-                </select>
+                <label htmlFor="sortBy">Sort Students by: </label>
+                <Select className='select-container' classNamePrefix='Select' inputId="sortBy" value = {showBy.sortBy} onChange = {selected => setShowBy({...showBy, sortBy: selected})} options={sortOpts}/>
             </div>
             <div className="showBy-section__eaBy searchName">  
                 <label htmlFor="searchName">Search Students by Name: </label>

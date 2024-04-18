@@ -7,9 +7,9 @@ import { DataContext } from "../Components/DataContext";
 const Home = () => {
     const {darkMode} = useContext(DataContext);
     const [showBy, setShowBy] = useState({
-        byCohort: 'All Cohorts',
-        byTrack: 'all',
-        sortBy: 'default',
+        byCohort: {value: 'All Cohorts', label: 'All Cohorts'},
+        byTrack: {value: 'all', label: 'All Students'},
+        sortBy: {value: 'default', label: 'Default'},
         searchName: ''
     });
     const [profileCardsDisplay, setProfileCardsDisplay] = useState('');
