@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  column-gap: 2%;
+  gap: 2%;
   &__main{
     grid-column: 1/span 1;
     grid-row: 1/span 2;
@@ -128,6 +128,8 @@
       display: flex;
       align-items: center;
       .delete{
+        cursor: pointer;
+        font-size: 1.5em;
         color: red;
       }
     }
@@ -208,7 +210,7 @@
 @media only screen and (max-width:430px){
   .profile-info{
     padding: 5%;
-    row-gap: 3%;
+    gap: 3%;
     overflow: scroll;
     &::-webkit-scrollbar {
       width: 5px;

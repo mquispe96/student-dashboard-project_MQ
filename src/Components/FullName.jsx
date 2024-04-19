@@ -11,8 +11,8 @@ const FullName = ({objKey}) => {
 
     return (
         <div className="name-card">
-            <Link className='link' to={`/Profile/${objKey}`}>
-                <h3 style={{color: onTrack ? 'green' : 'red'}}>{formatFullname(names)}</h3>
+            <Link className='link' to={`/Profile/${objKey}`} style={{background: onTrack ? 'rgba(0, 128, 1, .8)' : 'rgba(255, 0, 0, .8)'}}>
+                {formatFullname(names)}
             </Link>
         </div>
     )
