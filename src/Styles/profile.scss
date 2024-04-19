@@ -41,6 +41,22 @@
     padding: 10%;
     border-radius: 1.5em;
     box-shadow: 0 0 10px 0 lightgray;
+    .username-container{
+      display: flex;
+      place-items: center;
+      .username, .confirmation{
+        margin: 0 5px;
+      }
+      .confirmation{
+        color: green;
+      }
+      .username{
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+      }
+    }
     img{
       border-radius: 50%;
     }

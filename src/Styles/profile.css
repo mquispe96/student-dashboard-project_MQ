@@ -43,6 +43,22 @@
   border-radius: 1.5em;
   box-shadow: 0 0 10px 0 lightgray;
 }
+.profile-info .info .username-container {
+  display: flex;
+  place-items: center;
+}
+.profile-info .info .username-container .username, .profile-info .info .username-container .confirmation {
+  margin: 0 5px;
+}
+.profile-info .info .username-container .confirmation {
+  color: green;
+}
+.profile-info .info .username-container .username {
+  cursor: pointer;
+}
+.profile-info .info .username-container .username:hover {
+  text-decoration: underline;
+}
 .profile-info .info img {
   border-radius: 50%;
 }

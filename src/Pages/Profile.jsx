@@ -9,6 +9,7 @@ import MoreInfo from "../Components/MoreInfo";
 import Notes from "../Components/Notes";
 import EditForm from "../Components/EditForm";
 import { FaUserEdit } from "react-icons/fa";
+import copyToClipboard from "../Helper Functions/copy-to-clipboard";
 
 const Profile = () => {
     const {profileId} = useParams();
@@ -19,6 +20,7 @@ const Profile = () => {
     const {resume, linkedin, github, mockInterview} = certifications;
     const onTrack = resume && linkedin && github && mockInterview && (total > 600);
     const [showEditForm, setShowEditForm] = useState(false);
+    const [copyConfirmation, setCopyConfirmation] = useState(false);
 
     return (
         <main className="profile-content" style={{background: darkMode ? 'rgb(41, 41, 41)' : 'white', color: darkMode ? 'white' : 'black'}}>
@@ -33,7 +35,11 @@ const Profile = () => {
                         </div>
                         <div>
                             <h3>{formatFullname(names)} <FaUserEdit onClick={() => setShowEditForm(true)} className="edit"/></h3>
-                            <p><span>Email: </span>{username}</p>
+                            <div className="username-container">
+                                <span>Email: </span>
+                                {!copyConfirmation && <p className = 'username' onClick={() => copyToClipboard(username, setCopyConfirmation)}>{username}</p>}
+                                {copyConfirmation && <p className="confirmation">Email copied!</p>}
+                            </div>
                             <p><span>Birthday: </span>{getReadableDOB(dob)}</p>
                             <p><span>Cohort: </span>{readableDate(cohortCode)}</p>
                             <p><span>Cohort Started: </span>{getReadableDOB(cohortStartDate)}</p>

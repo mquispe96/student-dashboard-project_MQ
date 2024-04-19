@@ -25,6 +25,9 @@
             &:hover{
                 border: 2px hsl(0, 0%, 70%) solid;
             }
+            &::-webkit-search-cancel-button{
+                cursor: pointer;
+            }
         }
         label{
             margin-right: 5px;
@@ -148,6 +151,12 @@
     &__info{
         grid-row: 2/span 1;
         text-align: center;
+        .username{
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
     }
     &__profile-link{
         grid-row: 3/span 1;
@@ -159,6 +168,9 @@
             align-items: center;
             i{
                 margin-left: 5px;
+            }
+            &:hover{
+                font-size: 1.1em;
             }
         }
     }
