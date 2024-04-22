@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  gap: 2%;
+  gap: 5%;
 }
 .profile-info__main {
   grid-column: 1/span 1;
@@ -75,22 +75,33 @@
 }
 
 .more-info {
-  padding: 5%;
-  border-radius: 1.5em;
-  box-shadow: 0 0 10px 0 lightgray;
   grid-column: 2/span 1;
   grid-row: 1/span 1;
   display: flex;
-  justify-content: center;
-  height: fit-content;
+  justify-content: space-evenly;
 }
 .more-info .codewars, .more-info .scores, .more-info .certifications {
-  margin: 0 2%;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  row-gap: 1%;
+  width: 200px;
+  border-radius: 1.5em;
+  box-shadow: 0 0 10px 0 lightgray;
 }
-.more-info .codewars p, .more-info .scores p, .more-info .certifications p {
-  margin: 3% 0;
+.more-info .codewars .title, .more-info .scores .title, .more-info .certifications .title {
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  background: rgb(66, 66, 234);
+  color: white;
+  padding: 10%;
+  display: flex;
+  justify-content: center;
 }
-.more-info .certifications p {
+.more-info .codewars .body, .more-info .scores .body, .more-info .certifications .body {
+  display: grid;
+  padding: 0 5%;
+}
+.more-info .codewars .body p, .more-info .scores .body p, .more-info .certifications .body p {
   display: flex;
   align-items: center;
 }
@@ -167,11 +178,10 @@
   transform: translate(-50%, -50%);
   z-index: 1;
   background: white;
-  width: 25%;
-  height: 50%;
-  padding: 2% 3%;
+  width: 340px;
+  height: 340px;
+  padding: 3%;
   border-radius: 1.5em;
-  border: 2px black solid;
   box-shadow: 0 0 20px 0 lightgray;
 }
 .edit-form fieldset {
@@ -222,7 +232,7 @@
 @media only screen and (max-width: 430px) {
   .profile-info {
     padding: 5%;
-    gap: 3%;
+    gap: 8%;
     overflow: scroll;
     grid-template-rows: repeat(3, auto);
   }
@@ -249,21 +259,18 @@
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
-    column-gap: 10%;
+    gap: 5%;
+    justify-items: center;
+  }
+  .more-info .scores, .more-info .certifications {
+    width: 180px;
   }
   .more-info .codewars {
     grid-column: 1/span 2;
     grid-row: 1/span 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   .more-info .certifications, .more-info .scores {
-    margin: 0;
     grid-row: 2/span 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   .more-info .certifications {
     grid-column: 2/span 1;
@@ -279,11 +286,6 @@
   .notes ul {
     margin-top: 2.5%;
     height: 300px;
-  }
-  .edit-form {
-    width: 90%;
-    height: 50%;
-    padding: 5%;
   }
 }
 

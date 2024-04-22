@@ -22,7 +22,7 @@ const ShowBy = ({showBy, setShowBy}) => {
         {value: 'z-a', label: 'Z - A'}
     ]
     const groupedOpts = [
-        {label: 'Default', options: defaultSortOpt},
+        {label: '', options: defaultSortOpt},
         {label: 'Codewars', options: codewarsSortOpts},
         {label: 'Names', options: nameSortOpts}
     ]

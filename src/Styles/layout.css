@@ -1,13 +1,16 @@
 .header {
-  position: relative;
   grid-row: 1/span 1;
-  display: flex;
-  justify-content: center;
-  align-content: center;
   background: rgb(66, 66, 234);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.header h1 {
+
+.relative-container {
+  position: relative;
+}
+.relative-container h1 {
   margin: auto;
   text-decoration: underline;
 }
@@ -17,12 +20,18 @@
   border: 2px white solid;
   border-radius: 50%;
   position: absolute;
-  top: 10%;
-  right: 3%;
+  top: -15%;
+  right: -120%;
   padding: 10px;
   display: flex;
   place-items: center;
   font-size: 1.5em;
+}
+
+@media only screen and (max-width: 430px) {
+  .dark-mode {
+    right: -25%;
+  }
 }
 
 /*# sourceMappingURL=layout.css.map */

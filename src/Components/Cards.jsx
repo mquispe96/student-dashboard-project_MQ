@@ -31,7 +31,7 @@ const Cards = ({showBy}) => {
       <div className="profiles-section__header">
         <div>
           <h2>{showBy.byCohort.value}</h2>
-          <p>Total Students: <span>{profileCards.length}</span></p>
+          <p>Total Students: <span>{!(profileCards.length) ? 'No Results' : profileCards.length}</span></p>
         </div>
         <LayoutIcons setLayout = {setLayout}/>
       </div>
