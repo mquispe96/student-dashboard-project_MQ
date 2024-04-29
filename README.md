@@ -1,135 +1,117 @@
 # Student Dashboard Project
 
-For this assignment, you will build a student dashboard that will make use of already existing data stored in a JSON file. Users will be able to view students in several ways as well as add comments to those students.
+The purpose of this project is to create a clean and dynamic student dashboard application. The application will use the data provided in a JSON file, and users will have options to change the display, look for a student or students, see more info about a specific student, and also edit some of their info along with being able to add notes. 
 
-## Project scoring
+## Link
 
-This project has three different parts on which you will be graded. Each part is weighted differently.
+[Student Dashboard App](https://student-dashboard-mq.netlify.app/)
 
-- 70% of the project is scored on **completion**.
-- 20% of the project is scored through the **mastery rubric**.
-- 10% of the project is scored through **stretch goals**.
+## Features
 
-In total, you must receive at least 70% to complete this project. For example, you could attain 55% of points through the completion requirements, 10% of points through the mastery rubric, and 5% of points through the stretch goals.
+#### Global Features
 
-### Completion
+- Dark Mode Toogle Button
+- Desktop and mobile displays are different
 
-To complete this project, you will need to build a React application that meets the following feature and technical requirements.
+#### Home Page Features
 
-#### Overall requirements
+- Filter Students by Cohort
+   - Current Cohort List's Title will change according to choice (All Cohorts by default)
+      - Winter, Fall, Summer, Spring (2026)
+      - Winter, Fall, Summer, Spring (2025)
+- Filter Studnets by Track Status
+   - On Track (Resume, LinkedIn, GitHub, Mock Interview, Codewars score greater than 600)
+   - Off Track
+- Sort Students 
+   - By Codewars scores (Lowest to Highest or vice versa)
+   - By Name (A - Z or vice versa)
+- Search Student/s by Name (Matches will change as users type).
+- Total Students count will change according to how many students meet the criteria set by the users.
+- Users are able to change how they see the students on the page
+   - Card Display
+      - Picture, name, and email shown
+         - Picture's border color changes according to track status. (Green - On Track, Red - Off Track)
+         - Email is clickable for easy copy to users clipboard.
+         - Profile Page link shown at the bottom of the card, so users can click on it and go that specific student's profile page.
+   - Picture Display
+      - Only picture is shown, and picture is clickable, this way users are also able to go to that specific student's profile page.
+      - Picture's border color changes according to track status. (Green - On Track, Red - Off Track)
+   - Name Display
+      - Only name is shown as a button, this way users are also able to go to that specific student's profile page.
+      - Buttons's background color changes according to track status. (Green - On Track, Red - Off Track)
 
-1. The front-end application should be successfully deployed to the web.
-1. Your front-end repository should have a `readme.md` file with setup instructions for your application. It should also include a link to your deployed application.
+#### Profile Page Features
 
-#### Front-end feature requirements
+- Home button so users are able to click back home.
+- Picture's border color changes according to track status. (Green - On Track, Red - Off Track)
+- Edit button next to student's name
+   - Form appears, allowing users to change a specific student's certications status, and class scores. (not to be confuse with Codewars scores)
+- Once again, email is clickable for easy copy to users clipboard.
+- Form to add notes to a specific student's 1 on 1 notes list, said list appears next to this form.
+   - Each note can be deleted with a click on the red button right next to it.
+- Percentages changes text color according to grade. (Green - 90% and higher, Yellow - 80% to 89%, Orange - 70% to 79%, Red - 69% and Lower)
+- Certifications status will change according to status. (Face and Check Mark - Done, Face and X - Needs to be Done)
 
-To complete the front-end application, you will need to build a React application that demonstrates the following features.
+## Examples
 
-3. **Student list.** The Home page should show a list of all students. Each student should be shown including their name, username (i.e., email), birthday, and profile photo.
-1. **On-track status.** Each student should also be marked as either "On Track" or "Off Track." A student is "On Track" if the following is true about them:
-   - The student has a resume certification (e.g. `certifications.resume` is `true`).
-   - The student has a LinkedIn certification (e.g. `certifications.linkedin` is `true`).
-   - The student has a GitHub certification (e.g. `certifications.github` is `true`).
-   - The student has a mock interview certification (e.g. `certifications.mockInterview` is `true`).
-   - The student has a current CodeWars score that is over 600.
-1. **Additional student details.** Include a link or button on each student's profile that hides and shows additional information when clicked. This feature should include the following:
-   - The text of the button changes depending on whether it is open or closed.
-   - Opening the details section for one student does not open it for every other student.
-   - The details section includes the percentages for all scores, properly formatted as percentages.
-   - The details section includes whether or not the student has received certain certifications. Instead of showing "true" or "false" for certifications, show an emoji or icon depending on the certification status.
-1. **1-on-1 section.** Create a section in the student details section that contains information about a student's 1-on-1 with an instructor. To complete this feature, the following should be true:
-   - The section should include a title. (e.g. "1-on-1 Notes".)
-   - The section should include a form with commenter name, comment, and a submit button.
-   - The section should show a list of all previous notes that have been added.
-1. **Interactive 1-on-1 section.** Improve the 1-on-1 section with a working form. To complete this feature, the following should be true:
-   - The form can be filled out and submitted. On submit, the inputs are cleared.
-   - The submitted information is immediately shown in the list of notes.
-   - While the notes will not persist if the page is loaded, the new notes _should_ be found if you interact with a new cohort in the cohort list and then find the student.
-1. **Student list count.** The Home page should also include a count of how many students are within the data set.
-1. **Unique list of cohorts.** The Home page should also include a unique list of cohorts on the page.
-1. **Human-readable cohort names.** The list of cohorts should be human-readable (e.g. "Winter 2026" instead of "Winter2026") and ordered by time.
-1. **Clickable cohorts.** When one of the cohorts is clicked from the cohort list, the students shown on the page should change so that only those students in the cohort are shown.
-1. **Cohort title change.** When one of the cohorts is clicked from the cohort list, a heading on the page should change to display what cohort is being shown. The student count should update to reflect this change.
+#### Home Page (Light)
 
-### Mastery rubric
+- Card Display
 
-This section of the project is designed to measure your increasing skill at writing good code and following best practices.
+![alt text](./Examples/image-2.png)
 
-To view components of the mastery rubric, view the appropriate assignment on Canvas.
+- Picture Display
 
-### Stretch goals
+![alt text](./Examples/image-3.png)
 
-This section of the project measures your ability to go above and beyond in creating your project. To score points in this section, you should incorporate a feature, technology, or skill not explicitly required by the project instructions.
+- Name Display
 
-When you submit your pull request, _make sure to include a description of any stretch goals you implemented._ You may choose from the list below or come up with features or tasks that are more relevant to your specific implementation of the project.
+![alt text](./Examples/image-4.png)
 
-- Include a count for the number of notes added to each student, which is updated when a new note is added.
-- Allow for the user to click a button and the view of students changes to be just a list of names, or just a grid of profile images.
-- Implement a "dark mode" version of the website, which changes the CSS on click.
-- Add color-coding or segmentation to the cohort list, so that each year is visually distinct from one another.
+#### Home Page (Dark)
 
-Points will be allocated in this section at the discretion of the instructor.
+- Card Display
 
-## Existing code
+![alt text](./Examples/image-1.png)
 
-This project includes some existing code that will help you complete the features below.
+- Picture Display
 
-- [`src/data/data.json`](./src/data/data.json): This contains data for over 200 students. Each student has multiple properties associated with them. Some important ones include:
-  - `id`: A unique ID associated with each student.
-  - `profilePhoto`: A randomly generated photo from [Random users](https://xsgames.co/randomusers/).
-  - `cohort`: An object represents which "cohort" the student is in.
+![alt text](./Examples/image-5.png)
 
-## Advice
+- Name Display
 
-When building a project, there are additional skills to be gained alongside the tech you are learning. In this project, your ability to do the following will be tested:
+![alt text](./Examples/image-6.png)
 
-- To plan out your approach to large project before coding
-- To break large features into small, testable tasks that you can build
-- To synthesize multiple skills you've learned at once
-- To learn new skills and syntax on your own
-- To manage your time and stay focused on the important tasks
-- To ask for help
+#### Profile Page (Light)
 
-Without a good strategy, React can be very difficult. Consider reading the following before getting started:
+![alt text](./Examples/image-7.png)
 
-- [ReactJS: Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
+#### Profile Page (Dark)
 
-### Suggested process
+![alt text](./Examples/image-8.png)
 
-Consider the following process as a baseline for working through this project:
+#### Profile Page Edit Form 
 
-1. Start by sketching out the application on a piece of paper or online. Think about what the component hierarchy will be before you just start building.
-1. Build a static, non-interactive, and non-styled version of the application first. For example, start by listing all of the student names on the page.
-1. Once you have information displayed on the page, pick one component to work on to make more interactive.
+- Light
 
-Continue to slowly iterate, making small changes to complete each feature. Commit often, so that you can always undo your changes if you break something big.
+![alt text](./Examples/image-9.png)
 
-## Example
+- Dark
 
-The following is an example of the application. These images show the application completed at different stages of the project and highlights different parts of the project to make it clear what is being discussed.
+![alt text](./Examples/image-10.png)
 
-### Landing page
+#### Some Examples of Mobile View
 
-![landing page](./instruction-assets/landing.png)
+- Home Page 
 
-### Cohort list
+![alt text](./Examples/image-11.png)
 
-![cohort list](./instruction-assets/cohort-list.png)
+![alt text](./Examples/image-12.png)
 
-### Cohort list on click
+![alt text](./Examples/image-13.png)
 
-![interactive cohort list](./instruction-assets/interactive-cohort-list.png)
+- Profile Page
 
-### Student list with "On-track"
+![alt text](./Examples/image-14.png)
 
-![on-track designation](./instruction-assets/improved-student-list.png)
-
-### Student details section
-
-![closed](./instruction-assets/student-details-closed.png)
-
-![opened](./instruction-assets/student-details-opened.png)
-
-### 1-on-1 section
-
-![one-on-one section](./instruction-assets/one-on-one-section.png)
+![alt text](./Examples/image-15.png)
