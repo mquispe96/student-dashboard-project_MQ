@@ -19,7 +19,7 @@ The purpose of this project is to create a clean and dynamic student dashboard a
    - Current Cohort List's Title will change according to choice (All Cohorts by default)
       - Winter, Fall, Summer, Spring (2026)
       - Winter, Fall, Summer, Spring (2025)
-- Filter Studnets by Track Status
+- Filter Students by Track Status
    - On Track (Resume, LinkedIn, GitHub, Mock Interview, Codewars score greater than 600)
    - Off Track
 - Sort Students 
